@@ -1,0 +1,15 @@
+[package]
+name = "api_posts"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4.4"
+serde = { version = "1.0", features = ["derive"] }
+# Usaremos PGSQL para poder aprender a usar la más famosa con Rust
+sqlx = { version = "0.7", features = ["runtime-tokio-native-tls", "postgres", "macros"] }
+jsonwebtoken = "9.2" # Usaremos JWT para manejar la autenticación
+bcrypt = "0.15" # Usaremos bcrypt para encriptar las contraseñas
+chrono = { version = "0.4", features = ["serde"] } # Para manejar fechas y horas, especialmente para los timestamps de creación y actualización de los posts
+dotenvy = "0.15" # para poder usar .env 
+serde_json = "1.0"
