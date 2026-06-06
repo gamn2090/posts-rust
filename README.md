@@ -24,6 +24,12 @@ Explorar el desarrollo de APIs REST en Rust aplicando conceptos como:
 | Variables de entorno | dotenvy |
 | Contenedores | Docker + Docker Compose |
 
+## 🚀 API en producción
+
+La API está desplegada y disponible públicamente en:
+
+**https://posts-rust.onrender.com**
+
 ## 📚 Documentación de la API
 
 Toda la documentación interactiva de los endpoints, los esquemas de autenticación JWT y los ejemplos de respuestas (JSON) está alojada públicamente en Postman.
