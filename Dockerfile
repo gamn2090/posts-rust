@@ -14,6 +14,8 @@ RUN cargo build --release
 # copiamos nuestro código y lo compilamos reemplazando el dummy anterior
 RUN rm -rf src
 COPY src src
+# para que se tome en cuenta el index
+COPY public public
 # se hac un touch para forzar a cargo a recompilar (sino no detacta el cambio)
 RUN touch src/main.rs
 RUN cargo build --release

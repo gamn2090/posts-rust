@@ -1,4 +1,4 @@
-use actix_web::{web, App, HttpServer};
+use actix_web::{web, App, HttpServer, HttpResponse};
 use sqlx::postgres::PgPoolOptions;
 use std::env;
 
@@ -13,6 +13,13 @@ mod models;
 mod extractors;
 mod controllers;
 
+async fn index() -> HttpResponse {
+    let html = include_str!("../public/index.html");
+
+    HttpResponse::Ok()
+        .content_type("text/html; charset=utf-8") // así el navegador sabe que es una web
+        .body(html)
+}
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -48,6 +55,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(pool.clone()))
+            .route("/", web::get().to(index))
             .route("/auth/register", web::post().to(register))
             .route("/auth/login", web::post().to(login))
             .route("/posts", web::post().to(create_post))
