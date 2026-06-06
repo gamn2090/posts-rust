@@ -24,6 +24,14 @@ Explorar el desarrollo de APIs REST en Rust aplicando conceptos como:
 | Variables de entorno | dotenvy |
 | Contenedores | Docker + Docker Compose |
 
+## 📚 Documentación de la API
+
+Toda la documentación interactiva de los endpoints, los esquemas de autenticación JWT y los ejemplos de respuestas (JSON) está alojada públicamente en Postman.
+
+[![Ejecutar en Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/3761165/2sBXwqqAUJ)
+
+> **Nota:** Para probar las rutas protegidas del CRUD de Posts, asegúrate de registrar un usuario primero e inyectar el token en el Header de Autorización como `Bearer {token}`.
+
 ## Endpoints
 
 ### Autenticación
